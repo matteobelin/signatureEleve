@@ -21,10 +21,9 @@
     "experimentalSpecifierResolution": "node"
 },
 
-    "include": ["*.ts"],
+    "include": ["app/*.ts"],
     "exclude": [
         "node_modules",
         "build"
     ],
 }
-  
