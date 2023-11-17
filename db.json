@@ -5,6 +5,20 @@
       "email": "test@gmial.com",
       "password": "test",
       "role": "student"
+    },
+    {
+      "id": 2,
+      "email": "test@gmail.com",
+      "password": "test",
+      "role": "student"
+    }
+  ],
+  "course": [
+    {
+      "id": 1,
+      "title": "francais",
+      "date": "11/02/2023",
+      "time": "14:30"
     }
   ]
 }
