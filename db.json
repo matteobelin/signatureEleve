@@ -2,14 +2,26 @@
   "user": [
     {
       "id": 1,
-      "email": "test@gmial.com",
-      "password": "test",
-      "role": "student"
+      "email": "test@gmail.com",
+      "password": "$2b$10$3WOcFgSdOjWbl4szQVfNEu26ypzQZ3CViBMVJrm0PtBcm/hW0MERu",
+      "role": "admin"
     },
     {
       "id": 2,
-      "email": "test@gmail.com",
-      "password": "test",
+      "email": "test3@gmail.com",
+      "password": "$2b$10$fOBqkpikwlkQFOxuSuseIe4/dlwP9E9nhbpS.alR2dC3xaKo1rdZq",
+      "role": "student"
+    },
+    {
+      "id": 3,
+      "email": "test2@gmail.com",
+      "password": "$2b$10$74cfFHR/ePaiccC7cKlbxeyE6d3k3ByjftBEnPm.6vKa8k9Y4bv4S",
+      "role": "student"
+    },
+    {
+      "id": 4,
+      "email": "test4@gmail.com",
+      "password": "$2b$10$Uud4aBfGPk9SekVdKoCUc.9NkXkE/yJqGnAdCogEM23/GzvNH7Jxy",
       "role": "student"
     }
   ],
@@ -19,6 +31,21 @@
       "title": "francais",
       "date": "11/02/2023",
       "time": "14:30"
+    },
+    {
+      "id": 2,
+      "title": "francais",
+      "date": "28/02/2023",
+      "time": "14:30"
+    }
+  ],
+  "students_courses": [
+    {
+      "id_course": 1,
+      "id_user": 1,
+      "registeredAt": "17/11/2023",
+      "signedAt_date": "18/11/2023",
+      "signedAt_time": "18:01"
     }
   ]
 }
