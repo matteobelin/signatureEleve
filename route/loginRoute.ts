@@ -9,7 +9,6 @@ const loginRoute = express.Router();
 
 loginRoute.post("/login",async(req: Request, res: Response)=> {
   try {
-    
     await db.read();
     const userFound = db.data.user.find(user => user.email === req.body.email);
 

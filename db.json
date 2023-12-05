@@ -20,23 +20,29 @@
     },
     {
       "id": 4,
-      "email": "test4@gmail.com",
-      "password": "$2b$10$Uud4aBfGPk9SekVdKoCUc.9NkXkE/yJqGnAdCogEM23/GzvNH7Jxy",
+      "email": "essais@gmail.com",
+      "password": "$2b$10$RULsiOdLDA32n3JiBzLFJOGJFXfcVoQ5hKWUtiQoVvs.4q40xOgNq",
       "role": "student"
     }
   ],
   "course": [
     {
       "id": 1,
-      "title": "francais",
-      "date": "11/02/2023",
+      "title": "Francais",
+      "date": "04/12/2023",
       "time": "14:30"
     },
     {
       "id": 2,
-      "title": "francais",
+      "title": "Francais",
       "date": "28/02/2023",
       "time": "14:30"
+    },
+    {
+      "id": 3,
+      "title": "Anglais",
+      "date": "21/05/2007",
+      "time": "12:12"
     }
   ],
   "students_courses": [
@@ -44,8 +50,22 @@
       "id_course": 1,
       "id_user": 1,
       "registeredAt": "17/11/2023",
-      "signedAt_date": "18/11/2023",
-      "signedAt_time": "18:01"
+      "signedAt_date": "04/12/2023",
+      "signedAt_time": "14:29"
+    },
+    {
+      "id_course": 1,
+      "id_user": 3,
+      "registeredAt": "29/11/2023",
+      "signedAt_date": "04/12/2023",
+      "signedAt_time": "22:39"
+    },
+    {
+      "id_course": 3,
+      "id_user": 3,
+      "registeredAt": "29/11/2023",
+      "signedAt_date": null,
+      "signedAt_time": null
     }
   ]
 }

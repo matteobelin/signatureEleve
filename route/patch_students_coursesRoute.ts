@@ -6,7 +6,7 @@ const patchStudentsCoursesRoute = express.Router();
 
 patchStudentsCoursesRoute.patch('/patch_students_courses', verifToken, accesStudent, async (req: Request & { decoded?: any }, res: Response) => {
   try {
-
+    
     await db.read();
     const userFound = db.data.user.find(user => user.id === req.decoded.id);
     const courseFound = db.data.course.find(course => course.id === req.body.id_course);
@@ -21,14 +21,19 @@ patchStudentsCoursesRoute.patch('/patch_students_courses', verifToken, accesStud
           res.status(400).send("Deja signé");
           return;
         }
-        db.data.students_courses[existingRelationIndex].signedAt_date = new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        let date=new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        if(date!==courseFound.date){
+          res.send("Impossible de signer le cours un autre jours")
+          return;
+        }
+
+        db.data.students_courses[existingRelationIndex].signedAt_date = date;
         db.data.students_courses[existingRelationIndex].signedAt_time = new Date().toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 
         // Écriture dans la base de données
         await db.write();
         res.status(200).send("Élève a signé le cours avec succès");
       } else {
-        console.error("La relation n'existe pas, veuillez d'abord l'ajouter avec la route appropriée.");
         res.status(400).send("La relation n'existe pas");
       }
     } else {

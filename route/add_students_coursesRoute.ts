@@ -1,21 +1,22 @@
 import express, { Request, Response } from 'express';
 import { db } from '../config/models';
 import { verifToken, accesAdmin } from '../middleware/middleware';
+import { number } from 'yup';
 
 const addStudentsCoursesRoute = express.Router();
 
 addStudentsCoursesRoute.post('/add_students_courses', verifToken, accesAdmin, async (req: Request, res: Response) => {
   try {
     await db.read();
+    req.body.id_user=Number(req.body.id_user)
+    req.body.id_course=Number(req.body.id_course)
     const userFound = db.data.user.find(user => user.id === req.body.id_user);
     const courseFound = db.data.course.find(course => course.id === req.body.id_course);
      if(db.data.students_courses.findIndex(relation => relation.id_course === req.body.id_course && relation.id_user === req.body.id_user)!==-1)
      {
       res.status(400).send('Deja ajouté au cours');
       return;
-    }
-
-    
+    }    
     if (userFound && courseFound) {
       if (db.data && db.data.students_courses && Array.isArray(db.data.students_courses)) {
         const newRelation = {

@@ -24,7 +24,6 @@ addUserRoute.post("/add_user", verifToken, accesAdmin, async (req: Request, res:
       req.body.password = await bcrypt.hash(req.body.password, saltRounds);
       let data = await userSchema.validate(req.body, { stripUnknown: true });
       if (data["role"] === "student" || data["role"] === "admin") {
-        // Ajout de l'utilisateur à la base de données
         db.data.user.push({ id: id, ...data });
         await db.write();
         res.status(200).send("Personne ajoutée avec succès");

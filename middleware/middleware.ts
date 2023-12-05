@@ -44,6 +44,8 @@ export function accesStudent(req: Request & { decoded?: any }, res: Response, ne
     if(decoded.role!=='student'){
         res.status(400).send('Vous ne pouvez pas signer a la place d\' un eleve');
         return;
+    }else{
+        next();
     }
-    next();
+    
 }
