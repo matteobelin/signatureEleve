@@ -54,18 +54,18 @@ const AddStudent = () =>{
     
       return (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='form Add'>
             <div>
               <label htmlFor="email">Email de l'utilisateur</label>
-              <input type="text" id="email" name="email" autoComplete="email" />
+              <input type="text" id="email" name="email" autoComplete="email" placeholder='Email' />
             </div>
             <div>
               <label htmlFor="password">Mot de Passe</label>
-              <input type="password" id="password" name="password" autoComplete="password" />
+              <input type="password" id="password" name="password" autoComplete="password" placeholder='*********'/>
             </div>
             <div>
               <label htmlFor="passwordConfirm">Confirmation du Mot de Passe</label>
-              <input type="password" id="passwordConfirm" name="passwordConfirm" autoComplete="password" />
+              <input type="password" id="passwordConfirm" name="passwordConfirm" autoComplete="password" placeholder='*********'/>
             </div>
             <div>
               <label htmlFor="role">Rôle de l'utilisateur</label>

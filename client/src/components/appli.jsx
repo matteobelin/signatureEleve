@@ -56,13 +56,15 @@ const Appli = () => {
         setSelectedItem(element)
       };
     return (
-      <div>
+      <div className='flex'>
         <Sidebar onSidebarItemClick={handleSidebarItemClick} />
-        <div>
-            <p>{user}</p>
-            <p>{role}</p>
+        <div className="content">
+          <div className="flex">
+              <p>{user}</p>
+              <p>{role}</p>
+          </div>
+          <Content selectedItem={selectedItem}/>
         </div>
-        <Content selectedItem={selectedItem}/>
       </div>
     );
   };

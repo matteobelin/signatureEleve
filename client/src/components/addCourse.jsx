@@ -48,10 +48,10 @@ const AddCourse = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form Add'>
         <div>
           <label htmlFor="title">Nom du cours</label>
-          <input type="text" id="title" name="title" autoComplete="nom du cours" />
+          <input type="text" id="title" name="title" autoComplete="nom du cours" placeholder='Nom du cours' />
         </div>
         <div>
           <label htmlFor="date">Date du cours</label>

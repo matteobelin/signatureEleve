@@ -6,9 +6,9 @@ get_access.get("/access",verifToken,async(req: Request & { decoded?: any }, res:
   try {
     
     if(req.decoded.role==='admin'){
-        res.send({'access': ['add student', 'add course', 'add student at course']});
+        res.send({'access': ['Add student', 'Add course', 'Add student at course']});
     }else{
-        res.send({'access': ['course list']})
+        res.send({'access': ['Course list']})
     }
       
     

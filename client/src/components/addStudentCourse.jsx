@@ -105,7 +105,7 @@ const AddStudentCourse = () =>{
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='form Add'>
                 <div>
                     <label htmlFor="Eleve">Elève :</label>
                     {student}

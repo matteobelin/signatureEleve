@@ -4,6 +4,7 @@ import { useEffect,useState  } from 'react';
 const Sidebar = ({onSidebarItemClick}) => {
     const listElement=[];
     const [listData, setListData] = useState([]);
+    const [activeItem, setActiveItem] = useState(null) 
     const obtenirValeurCookie = (nom) => {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
@@ -49,22 +50,25 @@ const Sidebar = ({onSidebarItemClick}) => {
         let i=0
         while(listData[i]!=undefined){
           const handleClick = (index) => {
+            
             return () => {
               onSidebarItemClick(listData[index]);
+              setActiveItem(listData[index]);
             };
           };
           listElement.push(
-            <li key={i} id={listData[i]} onClick={handleClick(i)}>
+            <li key={i} id={listData[i]} onClick={handleClick(i)} className={activeItem === listData[i] ? 'active' : ''}>
               {listData[i]}
             </li>
           );
             i++;  
-                
+           
     }
+    
 
   return (
-    <div>
-        <nav>
+    <div className='sidebar'>
+        <nav >
             <ul>
             {listElement}
             </ul>

@@ -52,15 +52,16 @@ const Login = () => {
   }, []);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div class="login">
+      <form onSubmit={handleSubmit} class="form">
+        <p>Se connecter</p>
         <div>
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" autoComplete="email" />
+          <input type="text" id="email" name="email" autoComplete="email" placeholder='Email'/>
         </div>
         <div>
           <label htmlFor="password">Mot de passe</label>
-          <input type="password" id="password" name="password" autoComplete="current-password" />
+          <input type="password" id="password" name="password" autoComplete="current-password" placeholder='************' />
         </div>
         <button type="submit">Envoyer</button>
       </form>
