@@ -57,28 +57,44 @@ const CourseList = () =>{
         listElement.push(listData);
       }else{
         let i=0
-        while(listData[i]!=undefined){
-            listElement.push(
-                <div key={i}>
-                    <h3>{listData[i].title}</h3>
-                    <p>{listData[i].date}</p>
-                    <p>{listData[i].time}</p>
-                    {listData[i].signedAt_date && listData[i].signedAt_time !== null ? (
-                        <p>Signé</p>
-                    ) : listData[i].date !== date ? (
-                        <p>Non signé</p>
-                    ) : (
-                        <SignButton id_course={listData[i].id} Afficher={() => List()}/>
-                    )}
+        const itemsPerRow = 4;
+
+        while (listData[i] !== undefined) {
+          const group = [];
+          
+          for (let j = 0; j < itemsPerRow && listData[i] !== undefined; j++) {
+            group.push(
+              <div key={i} className="flex listCourse">
+                <div>
+                  <h3>{listData[i].title}</h3>
                 </div>
-                
-            )
-            i++
-        }
+                <div>
+                  <p>{listData[i].date}</p>
+                  <p>{listData[i].time}</p>
+                </div>
+                <div>
+                  {listData[i].signedAt_date && listData[i].signedAt_time !== null ? (
+                    <p className="green">Présent</p>
+                  ) : listData[i].date !== date ? (
+                    <p className="red">Non signé</p>
+                  ) : (
+                    <SignButton id_course={listData[i].id} Afficher={() => List()} />
+                  )}
+                </div>
+              </div>
+            );
+            i++;
+          }
+
+          listElement.push(
+            <div key={i / itemsPerRow} className="flex listeCourse">
+              {group}
+            </div>
+          );}
       }
 
     return (
-        <div>
+        <div className="flex element">
             {listElement}
         </div>
       );

@@ -102,7 +102,7 @@ body {
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     width: 250px;
     height: 100%;
     background: #042331;
@@ -161,4 +161,73 @@ body {
   }
 .form.Add button{
     margin-right:0;
+}
+
+.flex.listCourse{
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+.flex.listCourse+.flex.listCourse{
+  margin-left:2rem;
+}
+
+.flex.listCourse p{
+  margin-right: 0;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.flex.flex.listCourse h3{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.flex.listCourse .red {
+  color: red;
+  background-color: #f5c6cb; 
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 0.3rem; 
+  padding-right: 0.7rem;
+  padding-left:0.7rem
+}
+
+.flex.listCourse .green {
+  color: #28a745; 
+  background-color: #c3e6cb; 
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 0.3rem;
+  padding-left: 1.2rem; 
+  padding-right: 1.2rem;
+  margin-right: 0.2rem;
+  
+}
+
+.flex.listCourse button {
+  margin-top: 1.2rem;
+  padding: 0.3rem 25px 0.3rem 25px;
+  color: #856404; 
+  background-color: #ffeeba;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.flex.listCourse button:hover {
+  background-color: rgb(245, 235, 97);
+}
+.flex.element{
+  flex-direction: column;
 }

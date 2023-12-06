@@ -41,17 +41,17 @@
     {
       "id": 3,
       "title": "Anglais",
-      "date": "21/05/2007",
+      "date": "06/12/2023",
       "time": "12:12"
     }
   ],
   "students_courses": [
     {
-      "id_course": 1,
-      "id_user": 1,
+      "id_course": 2,
+      "id_user": 3,
       "registeredAt": "17/11/2023",
-      "signedAt_date": "04/12/2023",
-      "signedAt_time": "14:29"
+      "signedAt_date": null,
+      "signedAt_time": null
     },
     {
       "id_course": 1,
@@ -64,8 +64,8 @@
       "id_course": 3,
       "id_user": 3,
       "registeredAt": "29/11/2023",
-      "signedAt_date": null,
-      "signedAt_time": null
+      "signedAt_date": "06/12/2023",
+      "signedAt_time": "14:46"
     }
   ]
 }
