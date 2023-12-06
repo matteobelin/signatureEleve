@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import {useEffect } from "react";
+import {useEffect,useState } from "react";
 const Login = () => {
+  const [error,setError]=useState("")
   const navigate = useNavigate();
 
   function delCookie() {
@@ -22,6 +23,8 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    
+
     const email = event.target.elements.email.value;
     const password = event.target.elements.password.value;
 
@@ -41,6 +44,7 @@ const Login = () => {
         return null;
       } else {
         console.error('Échec de la connexion');
+        setError('* Email ou mdp incorrect')
       }
     } catch (error) {
       console.error('Erreur lors de la connexion', error);
@@ -52,12 +56,13 @@ const Login = () => {
   }, []);
 
   return (
-    <div class="login">
-      <form onSubmit={handleSubmit} class="form">
+    <div className="login">
+      <form onSubmit={handleSubmit} className="form">
         <p>Se connecter</p>
         <div>
+          <p className='error'>{error}</p>
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" autoComplete="email" placeholder='Email'/>
+          <input type="text" id="email" name="email" autoComplete="email" placeholder='Email'/> 
         </div>
         <div>
           <label htmlFor="password">Mot de passe</label>
